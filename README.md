@@ -2,6 +2,7 @@
 
 [![GitHub](https://img.shields.io/badge/github-kissy2go/houjin--bangou-blue.svg)](https://github.com/kissy2go/houjin-bangou)
 
+[![Gem Version](https://badge.fury.io/rb/houjin-bangou.svg)](https://badge.fury.io/rb/houjin-bangou)
 [![wercker status](https://app.wercker.com/status/60de5f243a0940720d44ff8958410aa8/s/master "wercker status")](https://app.wercker.com/project/byKey/60de5f243a0940720d44ff8958410aa8)
 [![License](https://img.shields.io/badge/license-MIT-yellowgreen.svg)](#license)
 
