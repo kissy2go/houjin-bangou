@@ -1,6 +1,8 @@
 # HoujinBangou
 
 [![GitHub](https://img.shields.io/badge/github-kissy2go/houjin--bangou-blue.svg)](https://github.com/kissy2go/houjin-bangou)
+
+[![wercker status](https://app.wercker.com/status/60de5f243a0940720d44ff8958410aa8/s/master "wercker status")](https://app.wercker.com/project/byKey/60de5f243a0940720d44ff8958410aa8)
 [![License](https://img.shields.io/badge/license-MIT-yellowgreen.svg)](#license)
 
 The www.houjin-bangou.nta.go.jp WebAPI bindings provides a simple SDK
