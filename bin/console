@@ -3,5 +3,7 @@
 require 'bundler/setup'
 require 'houjin-bangou'
 
+HoujinBangou.application_id = ENV['HOUJIN_BANGOU_APPLICATION_ID']
+
 require 'pry'
 Pry.start
