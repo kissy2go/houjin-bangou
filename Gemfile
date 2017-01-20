@@ -6,6 +6,7 @@ group :development do
   gem 'rake', '~> 10.0'
   gem 'rspec', '~> 3.0'
   gem 'webmock', '~> 2.0'
+  gem 'vcr', '~> 3.0'
   gem 'pry'
   gem 'pry-byebug'
   gem 'guard'
