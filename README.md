@@ -27,7 +27,26 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    HoujinBangou.application_id = YOUR_APPLICATION_ID
+
+    # Search by number
+    number = ... # String or Array
+    result = HoujinBangou::Num.search(number)
+    result.each do |record|
+      record #=> HoujinBangou::ResultSet::Record
+      record.corporate_number
+      record.name
+    end
+
+    # Search by date span
+    from = ... # Date, Time or String
+    to = ...   # Date, Time or String
+    result = HoujinBangou::Diff.search(from, to)
+    result.each do |record|
+      record #=> HoujinBangou::ResultSet::Record
+      record.corporate_number
+      record.name
+    end
 
 ## Development
 
