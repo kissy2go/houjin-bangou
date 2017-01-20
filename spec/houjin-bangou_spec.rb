@@ -53,4 +53,43 @@ describe HoujinBangou do
       stub_request(:get, url.to_s)
     end
   end
+
+  describe 'health checking' do
+    let(:re_record_interval) { 60 * 60 * 24 * 7 } # 7 days
+
+    let(:vcr_options) do
+      {
+        re_record_interval: re_record_interval,
+        match_requests_on: %i{ method uri },
+        allow_unused_http_interactions: false,
+      }
+    end
+
+    before { HoujinBangou.application_id = ENV['HOUJIN_BANGOU_APPLICATION_ID'] }
+
+    describe "GET /1/num" do
+      subject { HoujinBangou::Num.search(number) }
+
+      let(:number) { '1180301018771' }
+
+      it 'is OK' do
+        VCR.use_cassette 'num', vcr_options do
+          expect { subject }.not_to raise_error
+        end
+      end
+    end
+
+    describe "GET /1/diff" do
+      subject { HoujinBangou::Diff.search(from, to) }
+
+      let(:from) { '2017-01-01' }
+      let(:to)   { '2017-01-10' }
+
+      it 'is OK' do
+        VCR.use_cassette 'diff', vcr_options do
+          expect { subject }.not_to raise_error
+        end
+      end
+    end
+  end
 end

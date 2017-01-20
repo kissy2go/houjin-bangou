@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.houjin-bangou.nta.go.jp/1/num?id=<APPLICATION_ID>&number=1180301018771&type=01
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 20 Jan 2017 09:58:06 GMT
+      Set-Cookie:
+      - BIGipServerA004373H_pool_slb03_01=!mdr9tOaCECgXSkro7twfcTNFl4dSOO6oFDlsUKGqW60sYfEqDmUZGI4lcRZdkHg93Jj8zK4vkeeM0eM39RqCWa4mVFwMfmJ1/bOFPUm7;
+        path=/
+      - JSESSIONID=E53B8FCC332564C388368881316DEE14.jvm1; Path=/; Secure; HttpOnly
+      - TS017ccda4=01ce118de5dc6061f6ef62a245427248c025b81474227ed1993b0aa0b31dfb8550e54725a6f3c48476e7c374134b767cd06d0d2be3517453bc629883cec6b631b10d26acb3;
+        Path=/
+      Content-Type:
+      - text/csv;charset=Shift_JIS
+      Content-Language:
+      - ja
+      X-Frame-Options:
+      - DENY
+      Vary:
+      - User-Agent,Cookie
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        MjAxNy0wMS0yMCwxLDEsMQ0KMSwxMTgwMzAxMDE4NzcxLDAxLDAsMjAxNS0x
+        MS0xMywyMDE1LTEwLTA1LCKDZ4OIg16OqZOujtSKlI6uie+O0CIsLDMwMSwi
+        iKSSbYynIiwilkyTY45zIiwig2eDiINekqyCUJTUkm4iLCwyMywyMTEsNDcx
+        MDgyNiwsLCwsLCwyMDE1LTEwLTA1DQo=
+    http_version: 
+  recorded_at: Fri, 20 Jan 2017 09:58:06 GMT
+recorded_with: VCR 3.0.3
