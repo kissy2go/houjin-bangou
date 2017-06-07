@@ -8,8 +8,8 @@ describe HoujinBangou::ResultSet do
 
   let(:raw_response) do
     [
-      '2016-04-01,1,1,1',
-      '1,1140001999034,01,0,2016-04-01,2016-03-28,"株式会社新設合併",,301,"兵庫県","三木市","末広１丁目９番１０号",,28,215,6730403,,,,,,"兵庫県神戸市兵庫区水木通２丁目１番４号株式会社新設合併解散１（3140001999032）と兵庫県洲本市山手１丁目１番１５号株式会社新設合併解散２（2140001999033）の合併により設立",2016-03-28',
+      '2017-05-10,1,1,1',
+      '1,3430001005002,01,1,2017-05-09,2015-10-05,"株式会社英語表記新規登 録",,301,"北海道","札幌市中央区","北三条西6丁目1",,01,101,060000 3,,,,,,,2015-10-05,1,"A Company Limited","Hokkaido","6-1 Kita3-jonishi, Chuo ku Sapporo shi",',
     ]
   end
 
@@ -43,7 +43,7 @@ end
 
 describe HoujinBangou::ResultSet::Header do
   let(:header) { HoujinBangou::ResultSet::Header.new(*values) }
-  let(:values) { '2016-04-01,1,1,1'.parse_csv }
+  let(:values) { '2017-05-10,1,1,1'.parse_csv }
   let(:attrs)  { Hash[*([HoujinBangou::ResultSet::Header.members, values].transpose.flatten)] }
 
   describe 'attribute accessors' do
@@ -58,7 +58,7 @@ end
 
 describe HoujinBangou::ResultSet::Record do
   let(:record) { HoujinBangou::ResultSet::Record.new(*values) }
-  let(:values) { '1,1140001999034,01,0,2016-04-01,2016-03-28,"株式会社新設合併",,301,"兵庫県","三木市","末広１丁目９番１０号",,28,215,6730403,,,,,,"兵庫県神戸市兵庫区水木通２丁目１番４号株式会社新設合併解散１（3140001999032）と兵庫県洲本市山手１丁目１番１５号株式会社新設合併解散２（2140001999033）の合併により設立",2016-03-28'.parse_csv }
+  let(:values) { '1,3430001005002,01,1,2017-05-09,2015-10-05,"株式会社英語表記新規登 録",,301,"北海道","札幌市中央区","北三条西6丁目1",,01,101,060000 3,,,,,,,2015-10-05,1,"A Company Limited","Hokkaido","6-1 Kita3-jonishi, Chuo ku Sapporo shi",'.parse_csv }
   let(:attrs)  { Hash[*([HoujinBangou::ResultSet::Record.members, values].transpose.flatten)] }
 
   describe 'attribute accessors' do
@@ -86,6 +86,11 @@ describe HoujinBangou::ResultSet::Record do
       expect(record.successor_corporate_number).to eq attrs[:successor_corporate_number]
       expect(record.change_cause).to eq attrs[:change_cause]
       expect(record.assignment_date).to eq attrs[:assignment_date] ? Date.strptime(attrs[:assignment_date], '%Y-%m-%d') : nil
+      expect(record.latest).to eq Integer(attrs[:latest])
+      expect(record.en_name).to eq attrs[:en_name]
+      expect(record.en_prefecture_name).to eq attrs[:en_prefecture_name]
+      expect(record.en_city_name).to eq attrs[:en_city_name]
+      expect(record.en_address_outside).to eq attrs[:en_address_outside]
     end
   end
 end

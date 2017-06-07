@@ -61,7 +61,12 @@ module HoujinBangou
         :close_cause,                # 登記記録の閉鎖等の事由
         :successor_corporate_number, # 承継先法人番号
         :change_cause,               # 変更事由の詳細
-        :assignment_date             # 法人番号指定年月日
+        :assignment_date,            # 法人番号指定年月日
+        :latest,                     # 最新履歴
+        :en_name,                    # 商号又は名称 (英語表記)
+        :en_prefecture_name,         # 国内所在地 (都道府県) (英語表記)
+        :en_city_name,               # 国内所在地 (市区町村丁目番地等) (英語表記)
+        :en_address_outside          # 国外所在地 (英語表記)
       )
 
       def initialize(*)
@@ -71,6 +76,7 @@ module HoujinBangou
         self[:change_date]     = HoujinBangou::Util::Date.decode(change_date)
         self[:close_date]      = HoujinBangou::Util::Date.decode(close_date)
         self[:assignment_date] = HoujinBangou::Util::Date.decode(assignment_date)
+        self[:latest]          = HoujinBangou::Util::Number.decode(latest)
       end
     end
   end

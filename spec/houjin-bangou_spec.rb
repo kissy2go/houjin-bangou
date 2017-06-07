@@ -67,7 +67,7 @@ describe HoujinBangou do
 
     before { HoujinBangou.application_id = ENV['HOUJIN_BANGOU_APPLICATION_ID'] }
 
-    describe "GET /1/num" do
+    describe "GET /2/num" do
       subject { HoujinBangou::Num.search(number) }
 
       let(:number) { '1180301018771' }
@@ -79,7 +79,7 @@ describe HoujinBangou do
       end
     end
 
-    describe "GET /1/diff" do
+    describe "GET /2/diff" do
       subject { HoujinBangou::Diff.search(from, to) }
 
       let(:from) { '2017-01-01' }
