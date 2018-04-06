@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'houjin-bangou/command'
+
+HoujinBangou::Command.execute!(ARGV.dup)
